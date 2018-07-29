@@ -48,6 +48,10 @@ class ViewController: UIViewController {
     cardCollectionView.delegate = self
     cardCollectionView.dataSource = self
     cardCollectionView.register(RobinhoodCardCell.self, forCellWithReuseIdentifier: RobinhoodCardCell.identifier)
+    
+    if let layout = cardCollectionView.collectionViewLayout as? CardStackLayout {
+        layout.delegate = self
+    }
   }
 }
 
@@ -78,4 +82,11 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     let cellSize = CGSize(width: collectionViewSize.width * 0.9, height: collectionViewSize.height * 0.9)
     return cellSize
   }
+}
+
+extension ViewController: CardStackLayoutDelegate {
+    func cardShouldRemove(_ flowLayout: CardStackLayout, indexPath: IndexPath) {
+        cardsData.removeLast()
+        cardCollectionView.reloadData()
+    }
 }
