@@ -68,7 +68,7 @@ struct RobinhoodChartData {
   let openingPrice: Double
   let data: [(date: Date, price: Double)]
   
-  static var vooDayData: RobinhoodChartData {
+  static var portfolioData: RobinhoodChartData {
     var chartData: [(date: Date, price: Double)] = []
     
     var dateComponents = DateComponents()
@@ -104,8 +104,8 @@ struct RobinhoodChartData {
       chartData.append(chartDataPoint)
     }
 
-    let vooData = RobinhoodChartData(openingPrice: startPrice, data: chartData)
+    let portfolioData = RobinhoodChartData(openingPrice: startPrice, data: chartData)
     
-    return vooData
+    return portfolioData
   }
 }

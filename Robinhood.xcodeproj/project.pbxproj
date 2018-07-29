@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B622710920BFAB6E003D1DE7 /* TickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B622710820BFAB6E003D1DE7 /* TickerCell.swift */; };
+		B622710B20BFAB77003D1DE7 /* TickerColumnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B622710A20BFAB77003D1DE7 /* TickerColumnCell.swift */; };
+		B622710D20BFAB86003D1DE7 /* TickerControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B622710C20BFAB86003D1DE7 /* TickerControl.swift */; };
+		B6289EF320BF6B5E00A85B1F /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6289EF220BF6B5E00A85B1F /* GraphView.swift */; };
 		B64C914B209F3DF100BB1DEC /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B64C9145209F3DF100BB1DEC /* Roboto-Bold.ttf */; };
 		B64C914C209F3DF100BB1DEC /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B64C9146209F3DF100BB1DEC /* Roboto-Medium.ttf */; };
 		B64C914D209F3DF200BB1DEC /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B64C9147209F3DF100BB1DEC /* Roboto-Thin.ttf */; };
@@ -19,6 +23,7 @@
 		B64C9165209F3E7F00BB1DEC /* CardStackLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64C9162209F3E7F00BB1DEC /* CardStackLayout.swift */; };
 		B64C9166209F3E7F00BB1DEC /* RobinhoodCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64C9163209F3E7F00BB1DEC /* RobinhoodCardViewModel.swift */; };
 		B64C9167209F3E7F00BB1DEC /* RobinhoodCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64C9164209F3E7F00BB1DEC /* RobinhoodCardCell.swift */; };
+		B657D1C520E1763900D65C98 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657D1C420E1763900D65C98 /* String+Extensions.swift */; };
 		B6BF6461209F137F000FDF39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BF6460209F137F000FDF39 /* AppDelegate.swift */; };
 		B6BF6463209F137F000FDF39 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BF6462209F137F000FDF39 /* ViewController.swift */; };
 		B6BF6466209F137F000FDF39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BF6464209F137F000FDF39 /* Main.storyboard */; };
@@ -27,6 +32,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B622710820BFAB6E003D1DE7 /* TickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerCell.swift; sourceTree = "<group>"; };
+		B622710A20BFAB77003D1DE7 /* TickerColumnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerColumnCell.swift; sourceTree = "<group>"; };
+		B622710C20BFAB86003D1DE7 /* TickerControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerControl.swift; sourceTree = "<group>"; };
+		B6289EF220BF6B5E00A85B1F /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GraphView.swift; path = Robinhood/Graph/GraphView.swift; sourceTree = SOURCE_ROOT; };
 		B64C9145209F3DF100BB1DEC /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		B64C9146209F3DF100BB1DEC /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		B64C9147209F3DF100BB1DEC /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
@@ -39,6 +48,7 @@
 		B64C9162209F3E7F00BB1DEC /* CardStackLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStackLayout.swift; sourceTree = "<group>"; };
 		B64C9163209F3E7F00BB1DEC /* RobinhoodCardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobinhoodCardViewModel.swift; sourceTree = "<group>"; };
 		B64C9164209F3E7F00BB1DEC /* RobinhoodCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobinhoodCardCell.swift; sourceTree = "<group>"; };
+		B657D1C420E1763900D65C98 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		B6BF645D209F137F000FDF39 /* Robinhood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Robinhood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6BF6460209F137F000FDF39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6BF6462209F137F000FDF39 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +69,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B622710720BFAB35003D1DE7 /* Ticker */ = {
+			isa = PBXGroup;
+			children = (
+				B622710820BFAB6E003D1DE7 /* TickerCell.swift */,
+				B622710A20BFAB77003D1DE7 /* TickerColumnCell.swift */,
+				B622710C20BFAB86003D1DE7 /* TickerControl.swift */,
+			);
+			path = Ticker;
+			sourceTree = "<group>";
+		};
+		B6289EF120BF6B4A00A85B1F /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				B6289EF220BF6B5E00A85B1F /* GraphView.swift */,
+			);
+			path = Graph;
+			sourceTree = "<group>";
+		};
 		B64C9144209F3DDA00BB1DEC /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				B64C9152209F3E2100BB1DEC /* StyleGuide.swift */,
+				B657D1C420E1763900D65C98 /* String+Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -118,6 +147,8 @@
 		B6BF645F209F137F000FDF39 /* Robinhood */ = {
 			isa = PBXGroup;
 			children = (
+				B622710720BFAB35003D1DE7 /* Ticker */,
+				B6289EF120BF6B4A00A85B1F /* Graph */,
 				B64C9159209F3E5B00BB1DEC /* Data */,
 				B64C9154209F3E2A00BB1DEC /* Cards */,
 				B64C9151209F3E1400BB1DEC /* Helpers */,
@@ -211,11 +242,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B622710D20BFAB86003D1DE7 /* TickerControl.swift in Sources */,
 				B6BF6463209F137F000FDF39 /* ViewController.swift in Sources */,
 				B64C915D209F3E6200BB1DEC /* RobinhoodData.swift in Sources */,
+				B622710920BFAB6E003D1DE7 /* TickerCell.swift in Sources */,
+				B657D1C520E1763900D65C98 /* String+Extensions.swift in Sources */,
 				B64C9166209F3E7F00BB1DEC /* RobinhoodCardViewModel.swift in Sources */,
 				B6BF6461209F137F000FDF39 /* AppDelegate.swift in Sources */,
 				B64C9165209F3E7F00BB1DEC /* CardStackLayout.swift in Sources */,
+				B6289EF320BF6B5E00A85B1F /* GraphView.swift in Sources */,
+				B622710B20BFAB77003D1DE7 /* TickerColumnCell.swift in Sources */,
 				B64C9167209F3E7F00BB1DEC /* RobinhoodCardCell.swift in Sources */,
 				B64C9153209F3E2100BB1DEC /* StyleGuide.swift in Sources */,
 			);

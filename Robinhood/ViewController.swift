@@ -39,9 +39,17 @@ class ViewController: UIViewController {
   
   @IBOutlet weak var topView: UIView!
   @IBOutlet weak var cardCollectionView: UICollectionView!
-
+  
   private var cardsData = RobinhoodData.data.cards
-  private var graphData = RobinhoodChartData.vooDayData
+  private var graphData = RobinhoodChartData.portfolioData
+  
+  lazy private var graphView: GraphView = {
+    return GraphView(data: graphData)
+  }()
+  
+  lazy private var tickerControl: TickerControl = {
+    return TickerControl(value: graphData.openingPrice)
+  }()
   
   override func viewDidLoad() {
     
@@ -50,8 +58,33 @@ class ViewController: UIViewController {
     cardCollectionView.register(RobinhoodCardCell.self, forCellWithReuseIdentifier: RobinhoodCardCell.identifier)
     
     if let layout = cardCollectionView.collectionViewLayout as? CardStackLayout {
-        layout.delegate = self
+      layout.delegate = self
     }
+    
+    addChild(tickerControl)
+    topView.addSubview(tickerControl.view)
+    tickerControl.view.translatesAutoresizingMaskIntoConstraints = false
+    
+    view.addConstraints([
+      NSLayoutConstraint(item: tickerControl.view, attribute: .top, relatedBy: .equal, toItem: topView, attribute: .top, multiplier: 1.0, constant: 0.0),
+      NSLayoutConstraint(item: tickerControl.view, attribute: .leading, relatedBy: .equal, toItem: topView, attribute: .leading, multiplier: 1.0, constant: 0.0),
+      NSLayoutConstraint(item: tickerControl.view, attribute: .trailing, relatedBy: .equal, toItem: topView, attribute: .trailing, multiplier: 1.0, constant: 0.0),
+      NSLayoutConstraint(item: tickerControl.view, attribute: .height, relatedBy: .equal, toItem: topView, attribute: .height, multiplier: .tickerHeightMultiplier, constant: 0.0)
+      ])
+    
+    tickerControl.didMove(toParent: self)
+    
+    graphView.backgroundColor = .white
+    graphView.translatesAutoresizingMaskIntoConstraints = false
+    graphView.delegate = self
+    topView.addSubview(graphView)
+    
+    view.addConstraints([
+      NSLayoutConstraint(item: graphView, attribute: .bottom, relatedBy: .equal, toItem: topView, attribute: .bottom, multiplier: 1.0, constant: 0.0),
+      NSLayoutConstraint(item: graphView, attribute: .leading, relatedBy: .equal, toItem: topView, attribute: .leading, multiplier: 1.0, constant: 0.0),
+      NSLayoutConstraint(item: graphView, attribute: .trailing, relatedBy: .equal, toItem: topView, attribute: .trailing, multiplier: 1.0, constant: 0.0),
+      NSLayoutConstraint(item: graphView, attribute: .height, relatedBy: .equal, toItem: topView, attribute: .height, multiplier: .graphHeightMultiplier, constant: 0.0)
+      ])
   }
 }
 
@@ -76,17 +109,17 @@ extension ViewController: UICollectionViewDataSource {
 // MARK: UICollectionViewDelegate
 extension ViewController: UICollectionViewDelegate {  }
 
-extension ViewController: UICollectionViewDelegateFlowLayout {
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    let collectionViewSize = collectionView.frame.size
-    let cellSize = CGSize(width: collectionViewSize.width * 0.9, height: collectionViewSize.height * 0.9)
-    return cellSize
+// MARK: CardStackLayoutProtocol
+extension ViewController: CardStackLayoutProtocol {
+  func cardShouldRemove(_ flowLayout: CardStackLayout, indexPath: IndexPath) {
+    cardsData.removeLast()
+    cardCollectionView.reloadData()
   }
 }
 
-extension ViewController: CardStackLayoutDelegate {
-    func cardShouldRemove(_ flowLayout: CardStackLayout, indexPath: IndexPath) {
-        cardsData.removeLast()
-        cardCollectionView.reloadData()
+extension ViewController: GraphViewDelegate {
+    func didMoveToPrice(_ graphView: GraphView, price: Double) {
+        tickerControl.showNumber(price)
     }
 }
+
